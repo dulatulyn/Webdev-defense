@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/lab1/styles.css">
+
+    <!-- конкретный ситль -->
+     <style>
+        h2{
+            font-style: italic;
+            font-weight: bold;
+        }
+     </style>
+</head>
+<body>
+    <div class="container">
+        <div class="first-section">
+            <h1>Дулатулы Нурасыл</h1>
+            <p>18 лет, студент 2 курса КБТУ по специальности Информационные системы.</p>
+            <ol>
+                <li>Навайбкодил стартап на 1000 юзеров</li>
+                <li>Считаю что джава лучший язык во вселенной</li>
+                <li>Интересуюсь лингвистикой, учу немецкий</li>
+                <li>играю на пианино </li>
+            </ol>
+            <ul>
+                <li>Фанат формулы 1</li>
+                <li>Активно играю игры</li>
+                <li>6лвл фейсита</li>
+            </ul>
+
+        </div>
+        <div class="second-section">
+            <img src="/lab1/media/me.JPG" alt="me" class="me">
+            <br>
+            <label for="link1">LinkedIn:</label>
+            <a href="https://www.linkedin.com/in/dulatulyn/" class="link1">https://www.linkedin.com/in/dulatulyn/</a>
+
+            <label for="link1">Steam:</label>
+            <a href="https://steamcommunity.com/id/goldentak/" class="link1">https://steamcommunity.com/id/goldentak/</a>
+        </div>
+    </div>
+
+    <div class="after-flex">
+        <p>Мое расписание</p>
+
+        <div class="table">
+        <table>
+            <tr>
+                <th></th>
+                <th>Пн</th>
+                <th>Ср</th>
+                <th>Сб</th>
+            </tr>
+            <tr>
+                <td>8:00</td>
+                <td class="selected">ООП - Мырзакануров</td>
+                <td class="selected">ООП - Тучашвили</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>9:00</td>
+                <td class="selected">ООП - Мырзакануров</td>
+                <td class="selected">Enterprise Architecture - Алдамуратов</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>10:00</td>
+                <td class="selected">Казахский Рахимжанов</td>
+                <td class="selected">Enterprise Architecture - Алдамуратов</td>
+                <td class="selected">ОФП СМГ - Сиривля</td>
+            </tr>
+            <tr>
+                <td>11:00</td>
+                <td class="selected">Казахский Рахимжанов</td>
+                <td class="selected">Enterprise Architecture - Алдамуратов</td>
+                <td class="selected">ОФП СМГ - Сиривля</td>
+            </tr>
+            <tr>
+                <td>12:00</td>
+                <td class="selected">Веб разработка - Сергеева</td>
+                <td class="selected">Казахский Рахимжанов</td>
+                <td class="selected">Сети - Бегенов</td>
+            </tr>
+            <tr>
+                <td>13:00</td>
+                <td class="selected">Веб разработка - Сергеева</td>
+                <td></td>
+                <td class="selected">Сети - Бегенов</td>
+            </tr>
+            <tr>
+                <td>14:00</td>
+                <td></td>
+                <td></td>
+                <td class="selected">Сети - Жахаева</td>
+            </tr>
+            <tr>
+                <td>15:00</td>
+                <td></td>
+                <td></td>
+                <td class="selected">Сети - Жахаева</td>
+            </tr>
+            <tr>
+                <td>16:00</td>
+                <td class="selected">Веб разработка - Сеитбеков</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>17:00</td>
+                <td class="selected">Веб разработка - Сеитбеков</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+        <img src="/lab1/media/raspa.jpeg" alt="" class="raspa">
+    </div>
+
+    <div class="feedback">
+        <h2>Обратная связь</h2>
+        <form action="mailto:dulatulyn.dev@gmail.com">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name">
+            <br>
+            <label for="email">Почта:</label>
+            <input type="email" id="email" name="email">
+            <br>
+            <label for="message">Введите текст:</label>
+            <br>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea>
+            <br>
+            <input type="submit" id="submit" value="Отправить">
+        </form>
+    </div>
+
+    
+
+    <p class="refer">Дадите рефер в bcc?🙏</p>
+</body>
+</html>

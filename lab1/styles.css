@@ -1,0 +1,88 @@
+:root{
+    --background-color: #121212;
+    --foreground-color: #00ffcc;
+    --foreground-color2: #00b38f;
+    --gray: #2c2c2c;
+    --text-color: #FFFFFF;
+}
+
+*{
+    margin: 0;
+    padding: 5px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: monospace;
+    line-height: 20px;
+}
+
+.me{
+    width: 200px;
+    height: auto;
+    border-radius: 20px;
+}
+
+.container{
+    display: flex;
+    gap: 200px;
+}
+
+.first-section{
+    flex: 3;
+    margin-left: 50px;
+}
+
+.second-section{
+    flex: 1;
+}
+
+.after-flex .raspa{
+    width: 100%;
+}
+
+input, textarea {
+    background-color: var(--gray);
+    margin-bottom: 20px;
+    border: none;
+    height: 30px;
+    border-radius: 10px;
+}
+
+a {
+    color: var(--foreground-color);
+}
+
+button, #submit {
+    background-color: var(--foreground-color);
+    height: 30px;
+    width: 100px;
+    color: var(--background-color);
+}
+
+#submit:hover{
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.3);
+    cursor: pointer;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: white 1px solid;
+    text-align: left;
+}
+
+.selected{
+    background-color: var(--foreground-color2);
+    color: var(--background-color);
+}
+
+tr:nth-child(even) td:not(.selected) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.refer{
+    font-size: 8px;
+}

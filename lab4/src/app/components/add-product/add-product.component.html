@@ -1,0 +1,55 @@
+<div class="add-product">
+  <button class="toggle-btn" (click)="toggleForm()">
+    @if (formOpen) {
+      Cancel
+    } @else {
+      + Add Product
+    }
+  </button>
+
+  @if (formOpen) {
+    <form class="form" (ngSubmit)="submit()">
+      <div class="field">
+        <label for="name">Name *</label>
+        <input id="name" type="text" [(ngModel)]="form.name" name="name" required placeholder="Product name" />
+      </div>
+
+      <div class="field">
+        <label for="description">Description</label>
+        <textarea id="description" [(ngModel)]="form.description" name="description" rows="3" placeholder="Product description"></textarea>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="price">Price (KZT) *</label>
+          <input id="price" type="number" [(ngModel)]="form.price" name="price" required min="1" placeholder="0" />
+        </div>
+        <div class="field">
+          <label for="rating">Rating</label>
+          <input id="rating" type="number" [(ngModel)]="form.rating" name="rating" min="1" max="5" step="0.1" />
+        </div>
+      </div>
+      
+      <div class="field">
+        <label for="category">Category *</label>
+        <select id="category" [(ngModel)]="form.category" name="category" required>
+          @for (cat of categories; track cat.id) {
+            <option [value]="cat.id">{{ cat.label }}</option>
+          }
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="imageUrl">Image URL *</label>
+        <input id="imageUrl" type="url" [(ngModel)]="form.imageUrl" name="imageUrl" required placeholder="https://..." />
+      </div>
+
+      <div class="field">
+        <label for="link">Product Link</label>
+        <input id="link" type="url" [(ngModel)]="form.link" name="link" placeholder="https://kaspi.kz/..." />
+      </div>
+
+      <button class="submit-btn" type="submit">Add</button>
+    </form>
+  }
+</div>

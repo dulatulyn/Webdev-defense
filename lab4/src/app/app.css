@@ -1,0 +1,27 @@
+.header {
+  background: #fff;
+  padding: 12px 0;
+  border-bottom: 2px solid #f0c14b;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo {
+  height: 32px;
+}
+
+.header-category {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}

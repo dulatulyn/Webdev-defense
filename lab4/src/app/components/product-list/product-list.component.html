@@ -1,0 +1,37 @@
+<div class="search-container">
+  <label for="search">Search products</label>
+  <input
+    id="search"
+    type="text"
+    [(ngModel)]="searchQuery"
+    (input)="filterProducts()"
+    placeholder="Search by product name..."
+  />
+</div>
+
+<div class="filter-container">
+  <label for="category">Category</label>
+  <select
+    id="category"
+    [(ngModel)]="selectedCategory"
+    (change)="filterProducts()"
+  >
+    @for (category of categories; track category.id) {
+      <option [value]="category.id">{{ category.label }}</option>
+    }
+  </select>
+</div>
+
+@if (filteredProducts.length > 0) {
+  <div class="product-grid">
+    @for (product of filteredProducts; track product.id) {
+      <app-product-card [product]="product" />
+    }
+  </div>
+} @else {
+  <div class="empty-state">
+    <p>No products found</p>
+  </div>
+}
+
+<app-add-product (productAdded)="addProduct($event)" />
