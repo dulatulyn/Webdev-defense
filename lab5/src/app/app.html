@@ -1,0 +1,40 @@
+<div class="app-container">
+  <header class="header">
+    <div class="container header-inner">
+      <img src="/qaspi_logo.svg" alt="Qaspi Logo" class="logo" />
+      <span class="header-category">Qaspi.kz</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="filters-row">
+      <div class="search-container">
+        <label for="search">Search products</label>
+        <input id="search" type="text" [(ngModel)]="searchQuery" placeholder="Search by product name..." />
+      </div>
+
+      <div class="filter-container">
+        <label for="category">Category</label>
+        <select id="category" [(ngModel)]="selectedCategory">
+          @for (category of categories; track category.id) {
+          <option [value]="category.id">{{ category.name }}</option>
+          }
+        </select>
+      </div>
+    </div>
+
+    <section class="favorites-section" style="margin: 20px 0;">
+      <h2>Favorites ({{ favorites.length }})</h2>
+      @if (favorites.length === 0) {
+      <p>No favorite products yet</p>
+      } @else {
+      <app-product-list [products]="favorites" (remove)="onProductRemove($event)"
+        (toggleFavorite)="toggleFavorite($event)" />
+      }
+    </section>
+
+    <!-- The Product List component receives the filtered array -->
+    <app-product-list [products]="filteredProducts" (remove)="onProductRemove($event)"
+      (toggleFavorite)="toggleFavorite($event)" />
+  </main>
+</div>

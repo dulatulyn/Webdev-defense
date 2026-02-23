@@ -1,0 +1,64 @@
+<div class="card">
+  <div class="gallery">
+    <button class="gallery-arrow gallery-arrow--left" (click)="prevImage()">&#8249;</button>
+    <a [href]="product.link" target="_blank" rel="noopener">
+      <img
+        class="gallery-image"
+        [src]="product.images[selectedImage]"
+        [alt]="product.name"
+      />
+    </a>
+    <button class="gallery-arrow gallery-arrow--right" (click)="nextImage()">&#8250;</button>
+    <div class="gallery-dots">
+      @for (img of product.images; track $index) {
+        <span
+          class="dot"
+          [class.dot--active]="$index === selectedImage"
+          (click)="selectImage($index)"
+        ></span>
+      }
+    </div>
+  </div>
+
+  <div class="card-body">
+    <a class="card-title" [href]="product.link" target="_blank" rel="noopener">
+      {{ product.name }}
+    </a>
+
+    <div class="card-rating">
+      @for (star of stars; track star) {
+        <span class="star" [class.star--filled]="star <= product.rating"
+              [class.star--half]="star > product.rating && star - 1 < product.rating">
+        </span>
+      }
+      <span class="rating-reviews">({{ product.rating }})</span>
+    </div>
+
+    <div class="card-price-row">
+      <div class="price-block">
+        <span class="price-label">Price</span>
+        <span class="price-value">{{ formatPrice(product.price) }} &#8376;</span>
+      </div>
+      <div class="price-block">
+        <span class="price-label">Installment</span>
+        <span class="price-installment">{{ formatPrice(getInstallment(product.price)) }} &#8376;</span>
+        <span class="price-months">x3</span>
+      </div>
+    </div>
+
+    <div class="card-actions">
+      <a class="btn btn-buy" [href]="product.link" target="_blank" rel="noopener">
+        Buy
+      </a>
+      <div class="share-wrapper">
+        <button class="btn btn-share" (click)="toggleShare()">Share</button>
+        @if (shareOpen) {
+          <div class="share-dropdown">
+            <button class="share-option" (click)="share('whatsapp')">WhatsApp</button>
+            <button class="share-option" (click)="share('telegram')">Telegram</button>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>
