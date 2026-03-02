@@ -1,0 +1,31 @@
+<div class="container">
+    <button class="back-btn" (click)="goBack()">← Back</button>
+
+    @if (loading()) {
+    <div class="loading">Loading album details...</div>
+    } @else if (album(); as album) {
+    <div class="detail-card">
+        <h2>Album Details</h2>
+        <div class="info-group">
+            <label>ID:</label>
+            <span>{{ album.id }}</span>
+        </div>
+        <div class="info-group">
+            <label>User ID:</label>
+            <span>{{ album.userId }}</span>
+        </div>
+
+        <div class="edit-group">
+            <label>Title:</label>
+            <div class="input-with-btn">
+                <input type="text" [(ngModel)]="newTitle" class="title-input">
+                <button class="save-btn" (click)="saveTitle()">Save</button>
+            </div>
+        </div>
+
+        <div class="actions">
+            <a [routerLink]="['/albums', album.id, 'photos']" class="photos-btn">View Photos</a>
+        </div>
+    </div>
+    }
+</div>

@@ -1,0 +1,65 @@
+.container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.loading {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    padding: 40px;
+}
+
+.photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.photo-card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.thumbnail {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-title {
+    padding: 12px;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+}

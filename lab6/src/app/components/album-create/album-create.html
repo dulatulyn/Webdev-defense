@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Create New Album</h1>
+
+    @if (error()) {
+    <div class="error-message">{{ error() }}</div>
+    }
+
+    <form class="create-form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="userId">User ID (1-10)</label>
+            <input id="userId" type="number" [(ngModel)]="userId" name="userId" min="1" max="10" required
+                placeholder="Enter user ID (1-10)">
+        </div>
+
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input id="title" type="text" [(ngModel)]="title" name="title" required minlength="3"
+                placeholder="Enter album title (min 3 characters)">
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="create-btn" [disabled]="!isValid || submitting()">
+                {{ submitting() ? 'Creating...' : 'Create' }}
+            </button>
+            <a routerLink="/albums" class="cancel-btn">Cancel</a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="header">
+        <h1>Albums</h1>
+        <a routerLink="/albums/new" class="new-album-btn">+ New Album</a>
+    </div>
+
+    @if ((albums$ | async); as albums) {
+    <div class="albums-grid">
+        @for (album of albums; track album.id) {
+        <div class="album-card">
+            <div class="album-content" [routerLink]="['/albums', album.id]">
+                <h3>{{ album.id }}. {{ album.title }}</h3>
+            </div>
+            <button class="delete-btn" (click)="deleteAlbum(album.id)">Delete</button>
+        </div>
+        }
+    </div>
+    } @else {
+    <div class="loading">Loading albums...</div>
+    }
+</div>
